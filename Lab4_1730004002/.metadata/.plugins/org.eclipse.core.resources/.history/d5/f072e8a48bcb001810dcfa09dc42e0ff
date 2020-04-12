@@ -1,0 +1,19 @@
+public class Start {
+	public static void main(String[] args) {
+		Student.testStudent();	
+		}
+	static Student s1=new Student(1730004002);
+	public static String check() {
+		if(s1.isSleeping()==false) 
+			return "need coffee";
+		
+		else 
+			return "sweet dream";
+		
+		
+		}
+
+	
+	
+	
+}

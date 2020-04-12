@@ -1,0 +1,9 @@
+
+public class BoletusEdulis extends Boletus{
+	public BoletusEdulis(String color,int price) {
+		super(color,price);
+	}	//first constructor
+	public BoletusEdulis(String color) {
+		super(color,100);
+	}	//the second constructor with the price is always 100
+}

@@ -1,0 +1,15 @@
+
+public class Start {
+	public static void main(String[] args) {
+		Door.testDoor();
+		Car.testCar();
+		try {
+			Car c3=new Car("asdf",2);
+			c3.replaceManyDoors(10);
+					}
+		catch(Exception e) {
+			
+		}
+		
+	}
+}

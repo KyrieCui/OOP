@@ -1,0 +1,15 @@
+
+public class Cat extends Animal {
+	public Cat(String name, double weight) {
+		super(name, weight);
+		
+	}
+
+	public void feed() {
+		double weight;
+		weight=super.getWeight();
+		weight=weight+1.0;
+		super.setWeight(weight);
+	}	//a cat add 1.0 to its weight after feeding
+	
+}

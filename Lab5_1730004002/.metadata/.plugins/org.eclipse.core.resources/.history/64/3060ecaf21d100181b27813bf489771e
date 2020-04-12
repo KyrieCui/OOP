@@ -1,0 +1,15 @@
+
+public class Bird extends Animal {
+	private double altitude;
+	public Bird(String name,double weight,double altitude) {
+		super(name,weight);
+		this.altitude=altitude;
+	}	//a constructor to create a new object with name weight and altitude
+	public double getAltitude() {
+		return altitude;
+	
+	}	//a method to get altitude;
+	public static void testBird() {
+		
+	}
+}

@@ -1,0 +1,33 @@
+
+public class Person {
+	private String name;
+	private static BankAccount B;
+	private static Motocycle M;
+	static String s1;
+	public Person(String name, int money, Motocycle motocycle) {
+		this.name=name;
+		B=new BankAccount(money);
+		motocycle=new Motocycle("red",10);
+		M=motocycle;
+	}
+	public String getDescr() {
+		s1="Mr." +name+" has "+ B.getMoney()+" and"+M.getColor()+" motocycle"+" with "+M.getGasoline()+" liters of gasoline";
+		return s1;
+	}
+	public void changeMotocycle(Motocycle motocycle) {
+		motocycle=new Motocycle("blue",6);
+		M=motocycle;
+	}
+	public void buyGasoline(int money) {
+		if(money>B.getMoney()) {
+			B.setMoney(B.getMoney()-money);
+			M.addGasoline(money/8);
+		}
+	}
+	public static void testPerson() {
+		Motocycle M=new Motocycle("red",10);
+		Person P=new Person("Kyrie",100,M);
+		//System.out.println(P.getDescr());
+		System.out.println(s1.equals("Mr.Kyrie has 100 andred motocycle with 10 liters of gasoline"));
+	}
+}

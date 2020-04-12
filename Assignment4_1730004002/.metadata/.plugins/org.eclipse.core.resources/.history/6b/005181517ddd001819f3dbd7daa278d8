@@ -1,0 +1,36 @@
+
+public class Person implements Parentable {
+	private String name;
+	private Person parent;
+	private Ghost ghost;
+	public Person(String name,Person parent) {
+		this.name=name;
+		this.parent= parent;
+	}
+	public Person(String name,Ghost ghost) {
+		this.name=name;
+		this.ghost=ghost;
+	}
+
+	@Override
+	public String getName() {
+		return name;
+	}	//override getName method to get person name
+	public Person getParent() {
+		return parent;
+	}	//override getParent method to get parent
+	public static void testPerson() {
+		Parentable g=new Ghost("Whoooo");	//create a Ghost object
+		Parentable parent=new Person("Cui",(Ghost)g);
+		Parentable p=new Person("Kyrie",(Person)parent);
+		Ghost g1=(Ghost) g;
+		System.out.println(parent.getName()=="Cui");
+		System.out.println(parent.getParent()==g);
+		System.out.println(p.getName()=="Kyrie");
+		System.out.println(p.getParent()==parent);
+
+
+
+	}
+
+}

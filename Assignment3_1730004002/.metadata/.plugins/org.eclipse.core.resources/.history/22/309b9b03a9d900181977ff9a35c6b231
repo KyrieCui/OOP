@@ -1,0 +1,15 @@
+
+public class Boletus extends Mushroom{
+	private int price;
+	public Boletus(String color,int price) {
+		super(color);
+		this.price=price;
+	}
+	public int getPrice() {
+		return price;
+	}	//method to get price
+	@Override
+	public boolean isEdible() {
+		return true;
+	}	//the mushroom can  be eaten
+}

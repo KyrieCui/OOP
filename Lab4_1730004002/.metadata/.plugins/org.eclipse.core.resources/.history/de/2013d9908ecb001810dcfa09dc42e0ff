@@ -1,0 +1,15 @@
+public class Start {
+	public static void main(String[] args) {
+		Chicken.testChicken();
+		Chicken c1=new Chicken(5.0);
+		System.out.println(check(c1)=="sweet dream");
+		c1.wakeUp();
+		System.out.println(check(c1)=="need coffee");
+	}
+	public static String check(Chicken c) {
+		if(c.isSleeping()==false)
+			return "need coffee";
+		else
+			return "sweet dream";
+	}
+}

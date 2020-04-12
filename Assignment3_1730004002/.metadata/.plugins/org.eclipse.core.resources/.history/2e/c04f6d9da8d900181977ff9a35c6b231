@@ -1,0 +1,11 @@
+
+public class AmanitaPhalloides extends Mushroom{
+	public AmanitaPhalloides() {
+		super("green");
+	}
+	@Override
+	public boolean isEdible() {
+		return false;
+	}	//the mushroom can not be eaten
+	
+}

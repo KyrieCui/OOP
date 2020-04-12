@@ -1,0 +1,6 @@
+
+public class CepesALaBordelaise extends BoletusEdulis {
+	public CepesALaBordelaise() {
+		super("brown",500);
+	}	//the constructor with brown color and 500 price
+}

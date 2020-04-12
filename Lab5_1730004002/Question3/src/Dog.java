@@ -1,0 +1,28 @@
+
+public class Dog {
+	private String name;
+	private double weight;
+	public Dog(String name,double weight) {
+		this.name=name;
+		this.weight=weight;
+		}	//a new constructor create a new object with name and weight
+	public String getName() {
+		return name;
+	}	//a method to get name
+	public double getWeight() {
+		return weight;
+	}	//a method to get weight
+	public void feed() {
+		weight=weight+2.0;
+	}	//the object's weight add 2.0 after feeding
+	public static void testDog() {
+		Dog d = new Dog("Woof", 2.0);
+		System.out.println(d.getName() == "Woof");
+		System.out.println(d.getWeight() == 2.0);
+		d.feed();
+		// The name is still the same but the weight increased by 2.0:
+		System.out.println(d.getName() == "Woof");
+		System.out.println(d.getWeight() == 4.0);
+		}
+
+}

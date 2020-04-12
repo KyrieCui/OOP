@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class CLI {
+	private static Scanner input = new Scanner(System.in);
+	public static void main(String[] args) {
+		ElectricityCompany E=new ElectricityCompany("UIC Electric");	//create a ElectricityCompany method 
+		while(true) {
+		int i=readPosInt("Type an action (total:1 add:2 get:3 more:4 less:5 quit:6): ");
+		switch(i) {
+		case 1: 
+			System.out.println("Total amount of power consumed: "+E.totalConsumption());
+			break;
+		case 2:
+			
+			
+		}
+		}
+		
+	}
+	private static String readLine(String str) {
+		System.out.print(str);	//print its string argument on the screen
+		String str1=input.nextLine();
+		return str1;
+	}
+	private static int readPosInt(String str) {
+		while(true) {
+			System.out.print(str);
+			try {
+				int i=input.nextInt();
+				if(i>=1&&i<=6) {
+					input.nextLine();
+					return i;
+				}
+				else
+					System.out.println("Unknown action!");
+			}	//if the integer between 1 and 6 to select the action,performs the selected action,else print an error message 
+			catch(Exception e) {
+				System.out.println("You must type an integer!");
+			
+
+			}	//if the input is not integer, catch the exception, print "You must type an integer!" and enter again
+			
+			input.nextLine();
+		}
+
+	}
+
+}
+
+
+
+

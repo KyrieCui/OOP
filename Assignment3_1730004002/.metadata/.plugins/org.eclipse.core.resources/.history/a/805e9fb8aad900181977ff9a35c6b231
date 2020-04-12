@@ -1,0 +1,10 @@
+
+public class BoletusRubroflammeus extends Boletus {
+	public BoletusRubroflammeus() {
+		super("red",0);
+	}	//constructor with red color and 0 price
+	@Override
+	public boolean isEdible() {
+		return false;
+	}	//the mushroom can not be eaten
+}

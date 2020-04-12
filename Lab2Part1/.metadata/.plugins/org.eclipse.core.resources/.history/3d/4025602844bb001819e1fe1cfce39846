@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class CheckPassFail {
+	public static void main(String[] args) {
+		int mark;
+		System.out.print("Please enter your mark:");//hint for input
+		Scanner input=new Scanner(System.in);//create a scanner
+		mark=input.nextInt();//obtain the input value
+		if(mark>=50)
+			System.out.println("PASS");
+		else
+			System.out.println("FAIL");
+	}
+	
+
+	
+	
+}

@@ -1,0 +1,23 @@
+public class Start {
+	public static void main(String[] args) {
+		Student.testStudent();	
+		System.out.println(check()=="need coffee");
+		s1.fallAsleep();
+		System.out.println(check()=="sweet dream");
+		}
+	static Student s1=new Student(1730004002);
+	public static String check() {
+		if(s1.isSleeping()==false) 
+			return "need coffee";
+		
+		else 
+			return "sweet dream";
+		
+		
+		}
+	
+
+	
+	
+	
+}

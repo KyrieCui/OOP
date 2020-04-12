@@ -1,0 +1,25 @@
+
+public class Student {
+	private String name;
+	private Animal pet;
+	public Student(String name, Animal pet) {
+		this.name=name;
+		this.pet=pet;
+	}
+	public String getName() {
+		return name;
+	}
+	public Animal getPet() {
+		return pet;
+	}
+	public static void testStudent() {
+		Animal pet=new Cat("Bob",2.0);
+		Student s=new Student("Kyrie",pet);
+		System.out.println(s.getName()=="Kyrie");
+		System.out.println(s.getPet()==pet);
+		
+	
+	}
+	
+	
+}

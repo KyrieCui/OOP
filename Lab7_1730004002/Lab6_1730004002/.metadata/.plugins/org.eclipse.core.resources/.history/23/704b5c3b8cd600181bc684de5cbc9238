@@ -1,0 +1,12 @@
+
+public class Square extends Rectangle{
+	private double size;
+	public Square(double x,double y, double width,double length,double size) {
+		super(x,y,width,length);
+		this.size=size;
+		 }
+	public static void testSquare() {
+		Square s=new Square(0.0,0.0,4.0,4.0,16.0);
+		
+	}
+}

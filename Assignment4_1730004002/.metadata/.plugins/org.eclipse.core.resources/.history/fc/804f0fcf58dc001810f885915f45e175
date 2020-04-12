@@ -1,0 +1,23 @@
+
+public class Person extends Ghost implements Parentable {
+	private String name;
+	private Person parent;
+	public Person(String name,Person parent) {
+		super(name);
+		this.parent=parent;
+	}
+	@Override
+	public String getName() {
+		return name;
+	}	//override getName method to get person name
+	public Person getParent() {
+		return parent;
+	}	//override getParent method to get parent
+	public static void testPerson() {
+		Parentable g=new Ghost("Whoooo");
+		Person p1=new Person("Cui",(Person) g);
+		Person p=new Person("Kyrie",p1);
+		
+	}
+	
+}

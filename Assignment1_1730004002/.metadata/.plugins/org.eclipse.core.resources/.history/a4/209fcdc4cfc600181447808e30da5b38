@@ -1,0 +1,134 @@
+ 
+public class CoffeeMachine {
+	private int numCups; 		// describing the number of paper cups 
+	private int temperature;	//describing the temperature of the coffee
+	String s1;
+	static String s2;					
+	public CoffeeMachine() {
+		numCups=10;
+		temperature=70;
+	}	//a public constructor that creates a CoffeeMachine object,when a new object is created, the numCUps=10,temperature=70
+	public int getTemp() {
+		return temperature;
+	}	//return the object temperature
+	public String getCoffee() {
+		if(numCups>0) {
+			numCups=numCups-1;
+			return "";
+		}
+		else {
+			s1="You cannot get coffee when there are no cups!";
+			return s1;
+			
+		}
+	}	//reduce a cup of coffee at each time if there are enough coffee in the machine
+	public String addCoffee() {
+		if(numCups==0) { 
+			numCups=numCups+10;
+		return"";
+		}
+		else {
+			s1="Not enough space inside the machine to add 10 new cups!";
+			return s1;
+		}
+	}	//add coffee it the number of cups is 0
+	public void cooler() {
+		if(temperature>=60) {
+		temperature=temperature-10;
+		}
+}	//reduce 10 degree if the temperature greater than 60
+	public void hotter() {
+		if(temperature<=80) {
+		temperature=temperature+10;
+		}
+		
+	}	//increase the temperature if the temperature is lower than 80
+	public String setTemp(int newTemp) {
+		if(newTemp<50||newTemp>90) {
+			
+			s2="Temperature "+newTemp+" must be between 50 and 90!";
+			return s2;
+		}
+		else if(newTemp>=50||newTemp<=90) {
+			if(newTemp%10!=0) {
+				
+				s2="Temperature "+newTemp+" must be a mutiple of 10!";
+				return s2;
+			}
+			else {
+				temperature=newTemp;
+				return "";
+			}
+		}
+		return "";
+	
+		
+	}	//set the coffee temperature and the temperature must be between50 and 90 and must be  mutiple of 10
+	public static void testCoffeeMachine() {
+		CoffeeMachine c1=new CoffeeMachine();	//create a new object s1
+		System.out.println(c1.numCups==10);		//test the number of cups
+		System.out.println(c1.getTemp()==70);	//test the temperature of coffee
+		c1.getCoffee();		//get a cup of coffee
+		System.out.println(c1.numCups==9);		//test the number of coffee the machine left
+		for(int i=0;i<10;i++) {
+			c1.getCoffee();		//let the number of coffee become 0
+		}
+		System.out.println(c1.getCoffee()=="You cannot get coffee when there are no cups!");	//test the getCoffee if number of coffee is 0
+		c1.addCoffee();		//add 10 cups of coffee
+		System.out.println(c1.numCups==10);		//test the addCoffee if the number of coffee is 0
+		System.out.println(c1.addCoffee()=="Not enough space inside the machine to add 10 new cups!");	//test the addCoffee if the number of coffee is 10
+		
+		for(int i=0;i<9;i++) {
+		c1.getCoffee();
+		System.out.println(c1.addCoffee()=="Not enough space inside the machine to add 10 new cups!");	
+		}	//test the addCoffee when the number of coffee greater than 0
+		
+		for(int i=0;i<=5;i++) {
+		c1.cooler();
+		if(i==0) {
+			System.out.println(c1.getTemp()==60);
+		}
+		else {
+			System.out.println(c1.getTemp()==50);
+		}
+		}	//test the cooler whether the temperature is greater than 50 or not
+		
+		for(int i=0;i<=5;i++) {
+			c1.hotter();
+			if(i==0) {
+				System.out.println(c1.getTemp()==60);
+			}
+			else if(i==1) {
+				System.out.println(c1.getTemp()==70);
+			}
+			else if(i==2) {
+				System.out.println(c1.getTemp()==80);
+			}
+			else {
+				System.out.println(c1.getTemp()==90);
+			}
+		}	//test the hotter whether the temperature is lower than 90 or not
+		
+		c1.setTemp(60);
+		System.out.println(c1.getTemp()==60);
+		c1.setTemp(40);
+		System.out.println(s2.equals("Temperature 40 must be between 50 and 90!"));
+		c1.setTemp(100);
+		System.out.println(s2.equals("Temperature 100 must be between 50 and 90!"));
+		c1.setTemp(67);
+		System.out.println(s2.equals("Temperature 67 must be a mutiple of 10!"));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+	}
+	
+}
